@@ -17,17 +17,30 @@ AceAi is a **free, multimodal AI study platform** that combines smart scheduling
 - **📈 Progress Dashboard** - Comprehensive learning analytics
 
 ## 🛠️ Installation
-**Clone the repository**
+# AceAi One-Click Installer - FIXED
+Write-Host "🚀 Setting up AceAi Study Companion..." -ForegroundColor Green
 
-git clone https://github.com/EncryptedMind-0/AceAi-Study-Companion.git
-cd AceAi-Study-Companion
+# CORRECT repository URL
+$repoUrl = "https://github.com/EncryptedMind-0/AceAi-Your-Study-Companion/archive/refs/heads/main.zip"
+$zipFile = "AceAi.zip"
 
-**Install dependencies**
+Write-Host "📥 Downloading AceAi files from correct repository..." -ForegroundColor Yellow
+Invoke-WebRequest -Uri $repoUrl -OutFile $zipFile
 
-pip install -r requirements.txt
+# Extract files
+Write-Host "📂 Extracting files..." -ForegroundColor Yellow
+Expand-Archive -Path $zipFile -DestinationPath . -Force
+Move-Item -Path "AceAi-Your-Study-Companion-main\*" -Destination "." -Force
+Remove-Item -Path "AceAi-Your-Study-Companion-main" -Force -Recurse
+Remove-Item -Path $zipFile -Force
 
-**Run the application**
+# Install dependencies
+Write-Host "📦 Installing dependencies..." -ForegroundColor Yellow
+pip install streamlit opencv-python numpy transformers torch streamlit-webrtc av Pillow pandas requests
 
+# Run the application
+Write-Host "🎯 Starting AceAi..." -ForegroundColor Green
+Write-Host "👉 The app will open at http://localhost:8501" -ForegroundColor Cyan
 streamlit run app.py
 
 ## 📦 Requirements
