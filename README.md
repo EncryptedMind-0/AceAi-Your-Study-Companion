@@ -17,28 +17,28 @@ AceAi is a **free, multimodal AI study platform** that combines smart scheduling
 - **📈 Progress Dashboard** - Comprehensive learning analytics
 
 ## 🛠️ Installation
-# AceAi One-Click Installer - FIXED
+#AceAi One-Click Installer - FIXED
 Write-Host "🚀 Setting up AceAi Study Companion..." -ForegroundColor Green
 
-# CORRECT repository URL
+#CORRECT repository URL
 $repoUrl = "https://github.com/EncryptedMind-0/AceAi-Your-Study-Companion/archive/refs/heads/main.zip"
 $zipFile = "AceAi.zip"
 
 Write-Host "📥 Downloading AceAi files from correct repository..." -ForegroundColor Yellow
 Invoke-WebRequest -Uri $repoUrl -OutFile $zipFile
 
-# Extract files
+#Extract files
 Write-Host "📂 Extracting files..." -ForegroundColor Yellow
 Expand-Archive -Path $zipFile -DestinationPath . -Force
 Move-Item -Path "AceAi-Your-Study-Companion-main\*" -Destination "." -Force
 Remove-Item -Path "AceAi-Your-Study-Companion-main" -Force -Recurse
 Remove-Item -Path $zipFile -Force
 
-# Install dependencies
+#Install dependencies
 Write-Host "📦 Installing dependencies..." -ForegroundColor Yellow
 pip install streamlit opencv-python numpy transformers torch streamlit-webrtc av Pillow pandas requests
 
-# Run the application
+#Run the application
 Write-Host "🎯 Starting AceAi..." -ForegroundColor Green
 Write-Host "👉 The app will open at http://localhost:8501" -ForegroundColor Cyan
 streamlit run app.py
