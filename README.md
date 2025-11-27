@@ -18,6 +18,7 @@ AceAi is a **free, multimodal AI study platform** that combines smart scheduling
 
 ## 🛠️ Installation
 **Just Copy and Paste everything below in your powershell terminal**
+
 #AceAi One-Click Installer - FIXED
 Write-Host "🚀 Setting up AceAi Study Companion..." -ForegroundColor Green
 
