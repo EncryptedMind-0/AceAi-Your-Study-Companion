@@ -17,37 +17,20 @@ AceAi is a **free, multimodal AI study platform** that combines smart scheduling
 - **📈 Progress Dashboard** - Comprehensive learning analytics
 
 ## 🛠️ Installation
-**Just Copy and Paste everything below in your powershell terminal**
 
-#AceAi One-Click Installer - FIXED
+**Copy paste the below in your powershell terminal line by line!!**
 
-Write-Host "🚀 Setting up AceAi Study Companion..." -ForegroundColor Green
+# 1. Download the ZIP directly
+Invoke-WebRequest -Uri "https://github.com/EncryptedMind-0/AceAi-Your-Study-Companion/archive/refs/heads/main.zip" -OutFile "aceai.zip"
 
-#CORRECT repository URL
+# 2. Extract it
+Expand-Archive -Path "aceai.zip" -DestinationPath "." -Force
 
-$repoUrl = "https://github.com/EncryptedMind-0/AceAi-Your-Study-Companion/archive/refs/heads/main.zip"
-$zipFile = "AceAi.zip"
+# 3. Go to the folder
+cd "AceAi-Your-Study-Companion-main"
 
-Write-Host "📥 Downloading AceAi files from correct repository..." -ForegroundColor Yellow
-Invoke-WebRequest -Uri $repoUrl -OutFile $zipFile
-
-#Extract files
-
-Write-Host "📂 Extracting files..." -ForegroundColor Yellow
-Expand-Archive -Path $zipFile -DestinationPath . -Force
-Move-Item -Path "AceAi-Your-Study-Companion-main\*" -Destination "." -Force
-Remove-Item -Path "AceAi-Your-Study-Companion-main" -Force -Recurse
-Remove-Item -Path $zipFile -Force
-
-#Install dependencies
-
-Write-Host "📦 Installing dependencies..." -ForegroundColor Yellow
-pip install streamlit opencv-python numpy transformers torch streamlit-webrtc av Pillow pandas requests
-
-#Run the application
-
-Write-Host "🎯 Starting AceAi..." -ForegroundColor Green
-Write-Host "👉 The app will open at http://localhost:8501" -ForegroundColor Cyan
+# 4. Install and run
+pip install -r requirements.txt
 streamlit run app.py
 
 ## 📦 Requirements
