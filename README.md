@@ -20,16 +20,16 @@ AceAi is a **free, multimodal AI study platform** that combines smart scheduling
 
 **Copy paste the below in your powershell terminal line by line!!**
 
-# 1. Download the ZIP directly
+#1. Download the ZIP directly
 Invoke-WebRequest -Uri "https://github.com/EncryptedMind-0/AceAi-Your-Study-Companion/archive/refs/heads/main.zip" -OutFile "aceai.zip"
 
-# 2. Extract it
+#2. Extract it
 Expand-Archive -Path "aceai.zip" -DestinationPath "." -Force
 
-# 3. Go to the folder
+#3. Go to the folder
 cd "AceAi-Your-Study-Companion-main"
 
-# 4. Install and run
+#4. Install and run
 pip install -r requirements.txt
 streamlit run app.py
 
